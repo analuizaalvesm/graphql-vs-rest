@@ -21,9 +21,17 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r src/requirements.txt
           pip install pytest
 
       - name: Lint (basic import check)
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: |
-          python -c "import src, app; print('Imports OK')"
+          python -c "import src; import src.configs.config as cfg; import src.analyzers.analyze_results as ar; print('Imports OK', bool(hasattr(ar,'run_analysis')), 'config keys', list(cfg.config.keys()))"
+
+      - name: Run tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+        run: |
+          pytest -q

@@ -232,19 +232,31 @@ Resultados gerados a partir do CSV `results/experiment_YYYY-MM-DDTHH-MM-SS.csv` 
 
 ### 7.1 Visualizações
 
-[Gráfico 1 - Média do tempo de resposta por tratamento (`query_type` × `api_type`)](/src/results/analysis/plots/bar_means.png)
+<p align="center">
+  <img src="/src/results/analysis/plots/bar_means.png" height="500"/>
+  <br/>
+  <em>Gráfico 1 - Média do tempo de resposta por tratamento (<code>query_type</code> × <code>api_type</code>)</em>
+</p>
 
 - O gráfico de barras mostra que os tempos médios de resposta ficam em torno de 3,1–3,2 s para todos os tipos de consulta (`simple`, `nested`, `aggregated`) tanto em REST quanto em GraphQL.
 - As diferenças entre REST e GraphQL em cada tipo de consulta são pequenas e dentro das barras de erro (intervalos de confiança), indicando que não há um ganho consistente de tempo de resposta ao trocar REST por GraphQL em nenhum dos três tipos de consulta.
 
-[Gráfico 2 - Boxplot de tempo de resposta por tipo de API e estado de cache](/src/results/analysis/plots/boxplot_response_time.png)
+<p align="center">
+  <img src="/src/results/analysis/plots/boxplot_response_time.png" height="500"/>
+  <br/>
+  <em>Gráfico 2 - Boxplot de tempo de resposta por tipo de API e estado de cache</em>
+</p>
 
 - Os boxplots comparam response_time_ms para REST e GraphQL, separados em `cache_state = warm` e `cache_state = cold`.
 - As medianas e os intervalos interquartis dos quatro grupos são bastante próximos, com forte sobreposição entre REST/GraphQL e entre warm/cold.
 - Observa-se a presença de outliers de alta latência (acima de 6–7 s) em todos os cenários, o que reforça a escolha por testes não paramétricos.
 - Em resumo, a variação interna de cada grupo é maior do que as diferenças entre APIs ou entre estados de cache, sugerindo que o tempo de resposta é fortemente influenciado por fatores externos (rede, variabilidade da API do GitHub).
 
-[Gráfico 3 - Distribuição do tamanho de payload por tipo de API](/src/results/analysis/plots/hist_payload.png)
+<p align="center">
+  <img src="/src/results/analysis/plots/hist_payload.png" height="500"/>
+  <br/>
+  <em>Gráfico 3 - Distribuição do tamanho de payload por tipo de API</em>
+</p>
 
 - O histograma/curva de densidade de payload_size_bytes indica uma distribuição altamente assimétrica, com grande concentração em payload 0 B (respostas sem corpo) e uma cauda longa de respostas com payload elevado.
 - REST apresenta dois agrupamentos adicionais de payloads grandes (na faixa de alguns kB e dezenas de kB), enquanto GraphQL concentra-se mais em tamanhos intermediários, com menos ocorrências na cauda mais extrema.
