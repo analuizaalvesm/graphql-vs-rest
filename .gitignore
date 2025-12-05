@@ -1,5 +1,10 @@
+.vscode/
 node_modules/
 .env
 results/*.csv
 *.log
 .DS_Store
+
+# Python
+__pycache__/
+*.pyc
