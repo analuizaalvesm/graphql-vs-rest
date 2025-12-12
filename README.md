@@ -1,4 +1,4 @@
-# Relatório Técnico: GraphQL vs Rest - Um experimento controlado
+# Relatório Técnico: GraphQL vs Rest – Um experimento controlado
 
 ## 1. Informações do grupo
 
