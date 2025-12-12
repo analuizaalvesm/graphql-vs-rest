@@ -24,7 +24,7 @@ def generate_graphql_request(query_type: str) -> Dict[str, Any]:
 
 def build_record(api_type: str, query_type: str, concurrent_clients: int, cache_state: str, result: Dict[str, Any]) -> Dict[str, Any]:
     return {
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(datetime.UTC).isoformat(),
         "api_type": api_type,
         "query_type": query_type,
         "concurrent_clients": concurrent_clients,
