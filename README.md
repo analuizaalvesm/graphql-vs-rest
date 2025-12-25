@@ -1,4 +1,4 @@
-# Relatório Técnico: GraphQL vs Rest – Um experimento controlado
+# Relatório Técnico: GraphQL vs Rest
 
 ## 1. Informações do grupo
 
@@ -402,10 +402,12 @@ Como trabalhos futuros, seria interessante: (i) repetir o experimento com outros
 
 Referências:
 
-- GitHub API Documentation: https://docs.github.com/en/graphql
-- Biblioteca Pandas: https://pandas.pydata.org/
-- SciPy: https://scipy.org/
-- Seaborn: https://seaborn.pydata.org/
+- [📌 GitHub API Documentation - GraphQL](https://docs.github.com/en/graphql)
+- [📌 GitHub API Documentation - REST](https://docs.github.com/en/rest?apiVersion=2022-11-28)
+- [📌 Pandas](https://pandas.pydata.org/)
+- [📌 SciPy](https://scipy.org/)
+- [📌 Seaborn](https://seaborn.pydata.org/)
+- [📌 Python Official Documentation](https://docs.python.org/3/)
 
 ---
 
@@ -415,5 +417,3 @@ Referências:
 - Consultas GraphQL e endpoints REST: `src/queries.py`
 - Arquivos CSV gerados: `results/`
 - Google Looker Studio: [Dashboard - LAB05S03](https://lookerstudio.google.com/reporting/c981ba21-8fff-4106-9dc2-f9d9fe5e1e51)
-
----
